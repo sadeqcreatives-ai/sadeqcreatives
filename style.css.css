@@ -1,0 +1,886 @@
+/* ===== GENERAL ===== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --wine: #350f12;
+  --burgundy: #49181c;
+  --rose: #d38a8e;
+  --cream: #f7f4f1;
+  --white: #fff;
+  --text: #281719;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 12px;
+}
+
+body {
+  background: #eeeeee;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.site {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+section {
+  scroll-margin-top: 10px;
+}
+
+/* ===== NAVIGATION ===== */
+
+.navbar {
+  background: var(--wine);
+  color: white;
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  border-bottom: 1px solid #ffffff30;
+}
+
+.logo {
+  font-size: 11px;
+  line-height: 1.05;
+  min-width: 63px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 6px;
+}
+
+.nav-links a {
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--rose);
+}
+
+.about-link {
+  border: 1px solid #ffffff50;
+  padding: 3px 6px;
+  border-radius: 12px;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+  background: var(--wine);
+  color: white;
+  padding: 18px 15px 9px;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 9px;
+  align-items: center;
+  border-radius: 0 0 8px 8px;
+}
+
+.hero-image {
+  height: 153px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #6b5553;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content h1 {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 500;
+  margin-bottom: 9px;
+}
+
+.hero-content > p {
+  font-size: 6.4px;
+  line-height: 1.55;
+  color: #e8d8d8;
+  margin-bottom: 10px;
+}
+
+.satisfaction {
+  background: #502a2b;
+  border-radius: 6px;
+  padding: 7px 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 7px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.mini-button {
+  font-size: 5.5px;
+  padding: 4px 5px;
+  border-radius: 10px;
+  background: #100809;
+  color: white;
+}
+
+.mini-button:hover {
+  background: var(--rose);
+  color: var(--wine);
+}
+
+/* ===== SERVICES ===== */
+
+.services {
+  background: #a28f8f;
+  padding: 7px 12px 9px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 6px;
+  min-height: 96px;
+  padding: 9px;
+  position: relative;
+}
+
+.service-number {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.service-card h2 {
+  font-size: 10px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.service-card p {
+  font-size: 6.2px;
+  line-height: 1.5;
+  color: #514649;
+  padding-bottom: 15px;
+}
+
+.service-card a {
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  background: #100809;
+  color: white;
+  border-radius: 12px;
+  font-size: 5px;
+  padding: 3px 5px;
+}
+
+/* ===== PRICING ===== */
+
+.pricing {
+  background: #a28f8f;
+  padding: 0 12px 9px;
+}
+
+.pricing-heading {
+  color: white;
+  padding: 0 3px 8px;
+}
+
+.pricing-heading .eyebrow {
+  font-size: 10px;
+}
+
+.pricing-heading h2 {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.pricing-heading h2 span {
+  color: var(--rose);
+}
+
+.pricing-heading > p:last-child {
+  font-size: 6px;
+  max-width: 225px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.price-card {
+  background: white;
+  padding: 8px 7px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.price-card.popular {
+  background: var(--wine);
+  color: white;
+}
+
+.plan-tag {
+  align-self: flex-start;
+  background: #edc5c5;
+  color: #5a2427;
+  font-size: 5.5px;
+  border-radius: 9px;
+  padding: 2px 5px;
+  margin-bottom: 6px;
+}
+
+.popular .plan-tag {
+  background: #d98e91;
+}
+
+.price-card h3 {
+  font-size: 8px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.plan-description {
+  font-size: 5.7px;
+  line-height: 1.4;
+  min-height: 29px;
+  color: #6b5c5e;
+}
+
+.popular .plan-description {
+  color: #e7d7d7;
+}
+
+.price {
+  font-size: 9px;
+  font-weight: 700;
+  margin: 7px 0;
+}
+
+.price small {
+  font-size: 5.5px;
+  font-weight: 400;
+}
+
+.price-card ul {
+  list-style: none;
+  margin-bottom: 9px;
+  flex: 1;
+}
+
+.price-card li {
+  font-size: 5.7px;
+  line-height: 1.45;
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+
+.price-card li::before {
+  content: "●";
+  color: #ce888b;
+  margin-right: 4px;
+}
+
+.price-button {
+  display: block;
+  text-align: center;
+  font-size: 5.6px;
+  border: 1px solid #271315;
+  color: #211113;
+  border-radius: 12px;
+  padding: 4px 2px;
+}
+
+.popular .price-button {
+  background: white;
+  color: var(--wine);
+  border-color: white;
+}
+
+.pricing-note {
+  font-size: 5.5px;
+  text-align: center;
+  color: white;
+  padding-top: 7px;
+}
+
+/* ===== APPOINTMENT ===== */
+
+.appointment {
+  background: var(--wine);
+  color: white;
+  padding: 10px 17px 18px;
+  min-height: 246px;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 13px;
+  align-items: start;
+  border-radius: 7px;
+}
+
+.appointment-copy {
+  padding-top: 13px;
+}
+
+.appointment-copy h2 {
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.appointment-copy h2 span {
+  color: var(--rose);
+}
+
+.appointment-copy > p {
+  color: #e0cdcd;
+  font-size: 8px;
+  line-height: 1.65;
+}
+
+.form-heading {
+  font-size: 8px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.form-heading span {
+  color: var(--rose);
+}
+
+.appointment-form {
+  min-width: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.form-group {
+  min-width: 0;
+  margin-bottom: 6px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 5.5px;
+  color: #e7d7d7;
+  margin-bottom: 3px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  background: #654447;
+  color: white;
+  border: 1px solid #ffffff10;
+  border-radius: 9px;
+  padding: 7px;
+  font-size: 6px;
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #d6c2c3;
+}
+
+.form-group select option {
+  background: var(--wine);
+  color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--rose);
+}
+
+.form-group textarea {
+  min-height: 53px;
+  resize: vertical;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  background: #80585a;
+  color: white;
+  font-size: 6px;
+  padding: 7px 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: var(--rose);
+  color: var(--wine);
+}
+
+.form-status {
+  color: #f0d6d3;
+  font-size: 7px;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+}
+
+.contact-options {
+  display: grid;
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.contact-options[hidden] {
+  display: none;
+}
+
+.contact-link {
+  display: block;
+  padding: 7px 4px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 7px;
+  background: #f2d9d7;
+  color: var(--wine);
+}
+
+.contact-link.email {
+  background: white;
+}
+
+.form-note {
+  text-align: center;
+  color: #cdb7b7;
+  font-size: 5.5px;
+  margin-top: 7px;
+}
+
+/* ===== ABOUT ===== */
+
+.about {
+  background: #fcfaf9;
+  border: 1px solid #bcaeae;
+  border-radius: 13px;
+  margin: 5px 3px;
+  min-height: 104px;
+  padding: 13px 17px;
+  text-align: center;
+}
+
+.about-label {
+  font-size: 6px;
+  margin-bottom: 9px;
+}
+
+.about h2 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.about h2 span {
+  color: #bd777c;
+}
+
+.about > p:last-child {
+  max-width: 240px;
+  margin: 0 auto;
+  font-size: 6px;
+  line-height: 1.5;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+  color: white;
+  background:
+    linear-gradient(#482024d9, #351012e8),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80")
+    center / cover;
+  padding: 18px 16px 12px;
+  border-radius: 6px 6px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.8fr 0.9fr 1.05fr;
+  gap: 8px;
+}
+
+.footer h3,
+.footer-logo {
+  font-size: 7px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.footer p,
+.footer a {
+  font-size: 5.5px;
+  line-height: 1.6;
+}
+
+.footer p {
+  color: #e3d1d1;
+}
+
+.footer-grid > div > a:not(.footer-logo) {
+  display: block;
+  overflow-wrap: anywhere;
+  margin-bottom: 3px;
+}
+
+.social-links {
+  display: flex;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.social-links a {
+  font-size: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffff20;
+  margin-top: 80px;
+  padding-top: 8px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 5px;
+}
+
+/* ===== SMALL SCREENS ===== */
+
+@media (max-width: 350px) {
+  .nav-links {
+    gap: 5px;
+    font-size: 5.5px;
+  }
+
+  .hero {
+    padding-left: 9px;
+    padding-right: 9px;
+    gap: 7px;
+  }
+
+  .hero-content h1 {
+    font-size: 12px;
+  }
+
+  .appointment {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 8px;
+  }
+
+  .appointment-copy h2 {
+    font-size: 13px;
+  }
+
+  .footer-grid {
+    gap: 5px;
+  }
+}/* =================================
+   RESPONSIVE DESIGN
+   Sadeq Creatives
+================================= */
+
+/* Tablets and larger screens */
+@media (min-width: 600px) {
+  .site {
+    max-width: 1000px;
+  }
+
+  .navbar {
+    padding: 18px 35px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 24px;
+    font-size: 13px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    padding: 45px 40px;
+  }
+
+  .hero-image {
+    height: 350px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content > p {
+    font-size: 14px;
+  }
+
+  .satisfaction {
+    font-size: 20px;
+  }
+
+  .mini-button {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  .services {
+    padding: 30px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .service-card {
+    min-height: 190px;
+    padding: 20px;
+  }
+
+  .service-number {
+    font-size: 24px;
+  }
+
+  .service-card h2 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 12px;
+  }
+
+  .service-card a {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .pricing {
+    padding: 30px;
+  }
+
+  .pricing-heading h2 {
+    font-size: 28px;
+  }
+
+  .pricing-heading > p {
+    font-size: 13px;
+  }
+
+  .pricing-grid {
+    gap: 15px;
+  }
+
+  .price-card {
+    padding: 22px;
+  }
+
+  .plan-tag {
+    font-size: 11px;
+  }
+
+  .price-card h3 {
+    font-size: 18px;
+  }
+
+  .plan-description {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .price small {
+    font-size: 11px;
+  }
+
+  .price-card li {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .price-button {
+    font-size: 11px;
+    padding: 9px;
+  }
+
+  .pricing-note {
+    font-size: 11px;
+  }
+
+  .appointment {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 45px;
+    padding: 45px;
+  }
+
+  .appointment-copy h2 {
+    font-size: 30px;
+  }
+
+  .appointment-copy > p {
+    font-size: 14px;
+  }
+
+  .form-heading {
+    font-size: 18px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .submit-button {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .form-status,
+  .contact-link {
+    font-size: 12px;
+  }
+
+  .form-note {
+    font-size: 10px;
+  }
+
+  .about {
+    padding: 35px;
+  }
+
+  .about-label {
+    font-size: 12px;
+  }
+
+  .about h2 {
+    font-size: 25px;
+  }
+
+  .about > p:last-child {
+    font-size: 12px;
+  }
+
+  .footer {
+    padding: 35px;
+  }
+
+  .footer-grid {
+    gap: 25px;
+  }
+
+  .footer h3,
+  .footer-logo {
+    font-size: 13px;
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 11px;
+  }
+
+  .social-links a {
+    font-size: 11px;
+  }
+
+  .footer-bottom p {
+    font-size: 10px;
+  }
+}
+
+/* Extra-wide desktop screens */
+@media (min-width: 1000px) {
+  .site {
+    max-width: 1200px;
+  }
+
+  .hero {
+    padding: 60px;
+  }
+
+  .hero-image {
+    height: 420px;
+  }
+
+  .hero-content h1 {
+    font-size: 44px;
+  }
+
+  .hero-content > p {
+    font-size: 16px;
+  }
+
+  .services,
+  .pricing {
+    padding: 45px 60px;
+  }
+
+  .appointment {
+    padding: 60px;
+  }
+}
