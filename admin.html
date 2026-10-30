@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sadeq Creatives | Admin</title>
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <div class="admin-container">
+
+    <!-- ADMIN LOGIN -->
+    <section id="login-section" class="login-section">
+
+      <div class="brand">
+        <h1>Sadeq<br>Creatives</h1>
+        <p>ADMINISTRATION</p>
+      </div>
+
+      <div class="login-card">
+
+        <h2>Welcome Back</h2>
+        <p>Sign in to manage your appointments.</p>
+
+        <form id="login-form">
+
+          <div class="form-group">
+            <label for="admin-email">Email Address</label>
+            <input
+              type="email"
+              id="admin-email"
+              placeholder="Enter your email"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="admin-password">Password</label>
+            <input
+              type="password"
+              id="admin-password"
+              placeholder="Enter your password"
+              required
+            >
+          </div>
+
+          <button type="submit" id="login-button">
+            Sign In →
+          </button>
+
+          <p id="login-status" aria-live="polite"></p>
+
+        </form>
+
+      </div>
+    </section>
+
+
+    <!-- ADMIN DASHBOARD -->
+    <section id="dashboard-section" hidden>
+
+      <header class="dashboard-header">
+
+        <div class="brand">
+          <h1>Sadeq Creatives</h1>
+          <p>ADMIN DASHBOARD</p>
+        </div>
+
+        <button id="logout-button" type="button">
+          Log Out
+        </button>
+
+      </header>
+
+
+      <main class="dashboard-main">
+
+        <div class="welcome-heading">
+          <p>OVERVIEW</p>
+          <h2>Welcome, Admin</h2>
+          <span>Manage your customer service requests.</span>
+        </div>
+
+
+        <!-- SUMMARY CARDS -->
+        <div class="stats-grid">
+
+          <article class="stat-card">
+            <p>Total Requests</p>
+            <h3 id="total-count">0</h3>
+          </article>
+
+          <article class="stat-card">
+            <p>Pending</p>
+            <h3 id="pending-count">0</h3>
+          </article>
+
+          <article class="stat-card">
+            <p>Approved</p>
+            <h3 id="approved-count">0</h3>
+          </article>
+
+          <article class="stat-card">
+            <p>Rejected</p>
+            <h3 id="rejected-count">0</h3>
+          </article>
+
+        </div>
+
+
+        <!-- APPOINTMENTS -->
+        <section class="appointments-section">
+
+          <div class="section-heading">
+            <div>
+              <p>CLIENT MANAGEMENT</p>
+              <h2>Service Requests</h2>
+            </div>
+
+            <button id="refresh-button" type="button">
+              Refresh
+            </button>
+          </div>
+
+          <p id="dashboard-status" aria-live="polite"></p>
+
+          <div class="table-wrapper">
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Service</th>
+                  <th>Budget</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="appointments-list">
+                <tr>
+                  <td colspan="5">Sign in to load appointments.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </section>
+
+  </div>
+
+
+  <!-- APPOINTMENT DETAILS -->
+  <dialog id="appointment-dialog">
+
+    <div class="dialog-content">
+
+      <button
+        type="button"
+        id="close-dialog"
+        class="close-dialog"
+      >×</button>
+
+      <h2>Appointment Details</h2>
+
+      <div id="appointment-details"></div>
+
+    </div>
+
+  </dialog>
+
+
+  <!-- SUPABASE CLIENT LIBRARY -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- ADMIN JAVASCRIPT -->
+  <script src="admin.js"></script>
+
+</body>
+</html>
