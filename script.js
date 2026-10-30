@@ -113,6 +113,7 @@ ${details}
 
     statusMessage.textContent =
       "Your request has been saved! Choose WhatsApp or email to contact us.";
+    form.reset();
 
     contactOptions.hidden = false;
 
