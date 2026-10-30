@@ -1,0 +1,456 @@
+
+/* =====================================
+   SADEQ CREATIVES ADMIN DASHBOARD
+===================================== */
+
+:root {
+  --wine: #350f12;
+  --burgundy: #49181c;
+  --rose: #d38a8e;
+  --cream: #f7f4f1;
+  --white: #ffffff;
+  --text: #281719;
+  --muted: #806f70;
+  --border: #eadede;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #eeeeee;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.admin-container {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+/* ===== BRAND ===== */
+
+.brand h1 {
+  color: var(--wine);
+  font-size: 23px;
+  line-height: 1.1;
+}
+
+.brand p {
+  color: var(--rose);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+/* ===== LOGIN ===== */
+
+.login-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 18px;
+  background: var(--wine);
+}
+
+.login-section > .brand {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.login-section > .brand h1 {
+  color: var(--white);
+  font-size: 30px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 30px 25px;
+  box-shadow: 0 12px 35px #00000020;
+}
+
+.login-card h2 {
+  color: var(--wine);
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+.login-card > p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+/* ===== FORM ===== */
+
+.form-group {
+  margin-bottom: 17px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--text);
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px #d38a8e25;
+}
+
+#login-button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: var(--wine);
+  color: white;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+#login-button:hover {
+  background: var(--burgundy);
+}
+
+#login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#login-status {
+  font-size: 12px;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+
+/* ===== DASHBOARD HEADER ===== */
+
+.dashboard-header {
+  background: var(--wine);
+  color: white;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.dashboard-header .brand h1 {
+  color: white;
+  font-size: 20px;
+}
+
+.dashboard-header .brand p {
+  font-size: 9px;
+}
+
+#logout-button {
+  padding: 9px 15px;
+  border: 1px solid #ffffff60;
+  border-radius: 20px;
+  color: white;
+  background: transparent;
+  font-size: 12px;
+}
+
+#logout-button:hover {
+  background: var(--rose);
+  color: var(--wine);
+}
+
+/* ===== MAIN CONTENT ===== */
+
+.dashboard-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 35px 5%;
+}
+
+.welcome-heading {
+  margin-bottom: 25px;
+}
+
+.welcome-heading > p,
+.section-heading > div > p {
+  color: #a66d72;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.welcome-heading h2 {
+  color: var(--wine);
+  font-size: 27px;
+  margin: 5px 0;
+}
+
+.welcome-heading span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ===== STATISTICS ===== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.stat-card {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--rose);
+}
+
+.stat-card p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stat-card h3 {
+  color: var(--wine);
+  font-size: 30px;
+  margin-top: 7px;
+}
+
+/* ===== APPOINTMENTS ===== */
+
+.appointments-section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 22px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  color: var(--wine);
+  font-size: 21px;
+  margin-top: 3px;
+}
+
+#refresh-button {
+  border: 1px solid var(--rose);
+  border-radius: 20px;
+  padding: 8px 15px;
+  background: white;
+  color: var(--wine);
+  font-size: 12px;
+}
+
+#refresh-button:hover {
+  background: var(--wine);
+  color: white;
+}
+
+#dashboard-status {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+/* ===== TABLE ===== */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+th {
+  text-align: left;
+  background: #f8eeee;
+  color: var(--wine);
+  font-size: 11px;
+  padding: 13px 10px;
+}
+
+td {
+  border-bottom: 1px solid var(--border);
+  padding: 13px 10px;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+tbody tr:hover {
+  background: #fdf9f8;
+}
+
+/* ===== APPOINTMENT ACTIONS ===== */
+
+.action-button {
+  border: none;
+  border-radius: 6px;
+  padding: 7px 9px;
+  margin: 2px;
+  font-size: 11px;
+}
+
+.view-button {
+  background: #f2e1e2;
+  color: var(--wine);
+}
+
+.approve-button {
+  background: #e4f3e7;
+  color: #246c35;
+}
+
+.reject-button {
+  background: #f9e3e3;
+  color: #a12b2b;
+}
+
+.action-button:hover {
+  opacity: 0.75;
+}
+
+/* ===== DETAILS DIALOG ===== */
+
+#appointment-dialog {
+  width: calc(100% - 30px);
+  max-width: 500px;
+  margin: auto;
+  border: none;
+  border-radius: 12px;
+  padding: 25px;
+  color: var(--text);
+}
+
+#appointment-dialog::backdrop {
+  background: #1d090bcc;
+}
+
+.dialog-content {
+  position: relative;
+}
+
+.dialog-content h2 {
+  color: var(--wine);
+  margin-bottom: 18px;
+}
+
+.close-dialog {
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  border: none;
+  background: transparent;
+  font-size: 27px;
+  color: var(--wine);
+}
+
+#appointment-details p {
+  margin-bottom: 12px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+#appointment-details strong {
+  color: var(--wine);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 700px) {
+  .dashboard-main {
+    padding: 25px 15px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-card h3 {
+    font-size: 25px;
+  }
+
+  .appointments-section {
+    padding: 15px;
+  }
+
+  .welcome-heading h2 {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 380px) {
+  .dashboard-header {
+    padding: 15px;
+  }
+
+  .dashboard-header .brand h1 {
+    font-size: 17px;
+  }
+
+  #logout-button {
+    padding: 7px 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 17px;
+  }
+
+  .stat-card p {
+    font-size: 11px;
+  }
+}
