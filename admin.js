@@ -92,8 +92,12 @@ loginForm.addEventListener("submit", async (event) => {
   }
 
   loginStatus.textContent = "";
-  showDashboard();
-  await loadAppointments();
+
+// Clear login information
+loginForm.reset();
+
+showDashboard();
+await loadAppointments();
 });
 
 // 6. LOAD APPOINTMENTS FROM SUPABASE
